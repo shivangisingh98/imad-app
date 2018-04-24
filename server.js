@@ -5,6 +5,59 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+
+
+var articleone= {
+    title:'Article-one|Shivangi singh',
+    heading:Article-one,
+    date:'April 24, 2018',
+    content:`
+    <p>
+           This is my content for first article.This is my content for first article.This is my content for first article.This is my content for first article.This is my content for first article.This is my content for first article.This is my content for first article.This is my content for first article.This is my content for first article.This is my content for first article.
+       </p>
+       <p>
+           This is my content for first article.This is my content for first article.This is my content for first article.This is my content for first article.This is my content for first article.This is my content for first article.vThis is my content for first article.This is my content for first article.This is my content for first article.
+       </p>`
+    
+    
+};
+
+var htmltemplate=`
+
+<html>
+    <head>
+        <title>
+            ${title};
+        </title>
+        <meta name="viewport" content="width=device-width,initial scale=1"/>
+        <link href="/ui/style.css" rel="stylesheet" />
+            </head>
+    <body>
+    <div class="Container">
+        
+    
+    <div>
+        <a href="/">home</a>
+    </div>
+    <hr/>
+   ${heading};  
+   <div>
+       ${date};
+   </div>
+   <div>
+       ${content};
+   </div>
+   </div>
+   </body>
+</html>
+
+
+
+
+
+`;
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
